@@ -1,0 +1,28 @@
+project overview
+This project aims to read industrial sensors and convert their data into Excel sheets using affordable yet accurate modules. Although specialized PCB circuits might offer better accuracy, this project can achieve great accuracy if the steps are followed precisely. Just so you know, calibration is required after each shutdown to ensure reading accuracy.
+
+How It Works
+Software Configuration:
+1- Edit your parameters:
+        a- MAX_BAR
+        b- MAX_FLOW_RATE
+        *- Set these to your desired values.
+2- Add the number and types of sensors you need:
+        a- For 4-20mA and PT100 sensors, copy the respective function.
+        b- Ensure you use different variables for each sensor.
+
+Hardware Setup:
+1- Wire your 4-20mA sensors to MAX31865 modules as shown in the diagram.
+2- Connect the MAX31865 modules to the MCU.
+
+Procedure:
+1- Turn on the device.
+2- Calibrate the sensors:
+        *- Connect a current generator to the MAX31865 input and set it to 20mA. Ensure that the sensor reads the maximum value.
+        *- Disconnect the current generator and reconnect the sensor to the MAX31865.
+3- Ensure no serial monitor is running.
+4- Close the target Excel file.
+5- Start the Python script:
+        *- Use the command line to run the script (example: python path/to/code.py).
+6- Conduct your tests.
+7- Open your Excel files to review the data.
